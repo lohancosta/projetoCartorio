@@ -4,13 +4,14 @@
 #include <string.h> // biblioteca responsável por cuidar das string
 
 int registro() // Função responsável por cadastrar os usuários no sistema
-{   // Definindo variáveis
+{   // Início da criação das variáveis/strings locais
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char idade[40];
 	char cargo[40];
+	// Final da criação das variáveis/strings locais
 	
 	printf("Digite o CPF a ser cadastrado: "); // Coletando informação do usuário
 	scanf("%s", cpf); // %s refere-se a string
@@ -68,7 +69,8 @@ int registro() // Função responsável por cadastrar os usuários no sistema
 	fprintf(file, cargo); // Salvando o valor da variável
 	fclose(file); // Fechando o arquivo
 	
-	system("pause");
+	system("pause"); // Pausando a execução do programa e pede pro usuário pressionar qualquer tecla para continuar
+	system("cls"); // Limpando a tela e cls significa clear screen
 }
 
 
@@ -76,15 +78,16 @@ int consulta() {
 	
 	setlocale(LC_ALL, "Portuguese");
 	
-	
+	// Início da criação das variáveis/strings locais
 	char cpf[40];
-	char conteudo[300];
+	char conteudo[200];
+	// Fim da criação das variáveis/strings locais
 	
 	printf("Digite o CPF a ser consultado: "); // Coletando informação do usuário
 	scanf("%s", cpf); // %s refere-se a string
 	
-	FILE *file;
-	file = fopen(cpf, "r"); 
+	FILE *file; // Criando arquivo file
+	file = fopen(cpf, "r"); // Criou o arquivo e o "r" significa ler
 	
 	if(file == NULL) {
 		
@@ -97,16 +100,18 @@ int consulta() {
 		printf("\n");
 	}
 	
-	// Enquanto a função fgets conseguir ler uma linha do arquivo apontado por file e não atingir o final do arquivo ou retornar. 
-	//NULL(quando ocorre erro ou atinge o final do arquivo, continue executando o código dentro deste loop.
-	while(fgets(conteudo, 300, file) != NULL)  {
+	
+	// fgets lê a linha de texto do arquivo conteúdo. 200 número máximo de caracter e file é o ponteiro para o arquivo de onde a linha será lida.
+	// NULL é quando atinge o final do arquivo.
+	while(fgets(conteudo, 200, file) != NULL)  {
 		
 		printf("%s", conteudo); // %s refere-se a string
 	}
 	
 	printf("\n\n");
-	fclose(file);
-	system("pause");
+	fclose(file); // Fechando o arquivo
+	system("pause"); // Pausando a execução do programa e pede pro usuário pressionar qualquer tecla para continuar
+	system("cls"); // Limpando a tela e cls significa clear screen
 	
 }
 
@@ -126,7 +131,7 @@ int deletar() {
 	if(file == NULL) {
 		
 		printf("\nO usuário não se encontra no sistema!\n\n");
-		system("pause");
+		system("pause"); // Pausando a execução do programa e pede pro usuário pressionar qualquer tecla para continuar
 	}
 	
 	else
@@ -134,18 +139,20 @@ int deletar() {
 	if (remove(cpf) == 0) {
 		
 		printf("\nCPF do usuário deletado com sucesso!\n\n");
-		system("pause");
-	}
+		system("pause"); // Pausando a execução do programa e pede pro usuário pressionar qualquer tecla para continuar
+	}	
+	system("cls"); // Limpando a tela e cls significa clear screen
 	
 }
 
 
-int main() 
-	{
-	int opcao=0; // definindo a variáveis
+int main() {
+	// Início da criação das variáveis/strings
+	int opcao=0;
 	int laco=1;
 	char senhaDigitada[] = "a";
 	int comparacao;
+	// Final da criação das variáveis/strings
 	
 	
 	printf("#### Cartório ####\n\n");
@@ -156,7 +163,8 @@ int main()
 	
 	if (comparacao == 0) {
 		
-		system("cls");
+		system("cls"); // Limpando a tela e cls significa clear screen
+		
 		for(laco=1; laco=1;) {
 		
 			setlocale(LC_ALL, "Portuguese"); // definindo a linguagem
@@ -169,9 +177,9 @@ int main()
 			printf("\t4 - Sair do sistema\n\n");
 			printf("Opção: ");
 	
-			scanf("%d", &opcao); // scanf é pra receber a entrada do usuário/resposta e %d indica o formato que vai ser inserido, no caso é número inteiro. Armazenando a escolha do usuário.
+			scanf("%d", &opcao); // Armazenando a escolha do usuário. %d refere-se a número inteiro. o &opcao é onde o nº escolhido pelo usuário vai ser armazenado. 
 	
-			system("cls"); //limpar
+			system("cls"); // Limpando a tela e cls significa clear screen
 		
 			switch (opcao)
 			{
@@ -194,7 +202,7 @@ int main()
 				
 				default:
 				printf("Essa opção não está disponivel!\n");
-				system("pause");
+				system("pause"); // Pausando a execução do programa e pede pro usuário pressionar qualquer tecla para continuar
 				break;
 			}
 		}
