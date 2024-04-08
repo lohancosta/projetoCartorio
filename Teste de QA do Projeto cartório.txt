@@ -1,0 +1,34 @@
+				Teste de QA do Projeto cartório
+
+
+• Login:
+	- Acesso de admin está conforme o esperado.
+	- A recusa de acesso ocorre corretamente para senha incorreta.
+
+• Função Menu:
+	- Função implementada corretamente, iniciando e encerrado conforme o esperado.
+	- Todas as funções, incluindo registro, consulta, delete e sair do sistema funcionou corretamente.
+
+• Funão Registrar:1
+	- A criação de banco de dados está correta.
+	- Inserção CPF inserido corretamente.
+	- Inserção Nome inserido corretamente.
+	- inserção Sobrenome inserido corretamente.
+	- inserção Idade inserido corretamente.
+	- inserção Cargo inserido corretamente.
+	- A função de inserção foi encerrado corretamente e o usuário foi redirecionado de 	volta oa menu principal.
+
+• Função Conultar:
+	- Solicitação do CPF efetuada com sucesso.
+	- Consulta ao banco de dados foi realizada sem problemas.
+	- Retorno ao usuário com informações ocorreu com sucesso.
+	- Retorno ao menu principal sem falhas.
+
+• Função Deletar:
+	- Solicitaão do CPF para deletar efetuada com sucesso.
+	- Recussa de CPF inserido incorretamente efetuada com sucesso.
+	- Operação de deletar no banco de dados efetuada com sucesso.
+
+• Função Sair do sistema
+	- Função sair do sistema efetuada com sucesso.
+	
